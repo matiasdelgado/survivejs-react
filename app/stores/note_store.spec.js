@@ -1,7 +1,7 @@
 import assert from 'assert';
-import NoteActions from '../app/actions/noteActions';
-import NoteStore from '../app/stores/noteStore';
-import alt from '../app/libs/alt';
+import NoteActions from '../actions/noteActions';
+import NoteStore from './noteStore';
+import alt from '../libs/alt';
 
 describe('NoteStore', () => {
 	beforeEach(() => {

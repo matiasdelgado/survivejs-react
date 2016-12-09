@@ -2,12 +2,12 @@ import React from 'react';
 import AltContainer from 'alt-container';
 import { DropTarget } from 'react-dnd';
 
-import Notes from './notes';
-import NoteActions from '../actions/noteActions';
-import NoteStore from '../stores/noteStore';
-import LaneActions from '../actions/laneActions';
-import Editable from './editable';
-import ItemTypes from '../constants/itemTypes';
+import Notes from '../notes';
+import NoteActions from '../../actions/noteActions';
+import NoteStore from '../../stores/noteStore';
+import LaneActions from '../../actions/laneActions';
+import Editable from '../editable';
+import ItemTypes from '../../constants/itemTypes';
 
 const noteTarget = {
 	hover(targetProps, monitor) {
@@ -32,7 +32,7 @@ class Lane extends React.Component {
 	}
 
 	render() {
-		const {connectDropTarget, lane, ...props} = this.props;
+		const {connectDropTarget, lane, ...props} = this.props; // eslint-disable-line no-unused-vars
 		return connectDropTarget(
 			<div {...props}>
 				<div className='lane-header' onClick={this.activateLaneEdit}>
@@ -126,9 +126,5 @@ Lane.propTypes = {
 	}).isRequired,
 	connectDropTarget: React.PropTypes.func
 };
-Lane.defaultProps = {
-	name: '',
-	notes: []
-}
 
 export default Lane;

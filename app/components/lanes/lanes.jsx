@@ -1,12 +1,10 @@
 import React from 'react';
-import Lane from './Lane.jsx';
+import Lane from '../lane';
 
 const Lanes = ({lanes}) => {
 	return (
 		<div className='lanes'>{lanes.map(lane =>
 			<Lane className='lane' key={lane.id} lane={lane}>
-				<Lane.Header />
-				<Lane.Notes />
 			</Lane>
 		)}</div>
 	);

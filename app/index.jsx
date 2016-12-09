@@ -7,5 +7,7 @@ import persist from './libs/persist';
 
 import App from './components/app.jsx';
 
+// import './main.css';
+
 persist(alt, storage, 'app');
 ReactDOM.render(<App />, document.getElementById('app'));

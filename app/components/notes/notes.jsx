@@ -1,8 +1,8 @@
 /* what */
 import React from 'react';
-import Editable from './editable.jsx';
-import Note from './note';
-import LaneActions from '../actions/laneActions';
+import Editable from '../editable';
+import Note from '../note/note';
+import LaneActions from '../../actions/laneActions';
 
 const Notes = ({notes, onValueClick, onEdit, onDelete}) => {
 	return (

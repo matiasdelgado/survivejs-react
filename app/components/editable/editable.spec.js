@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-	renderIntoDocument, 
+import {
+	renderIntoDocument,
 	findRenderedDOMComponentWithClass,
 	findRenderedDOMComponentWithTag,
-	Simulate	
+	Simulate
 } from 'react-addons-test-utils';
 import assert from 'assert';
-import Editable from '../app/components/editable';
+import Editable from './editable';
 
 describe('Editable', () => {
 	it('renders value', () => {

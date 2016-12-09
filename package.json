@@ -10,7 +10,8 @@
     "test": "karma start",
     "tdd": "karma start --auto-watch --no-single-run",
     "flow": "flow check",
-    "lint": "eslint . --ext .js --ext .jsx"
+    "lint": "eslint . --ext .js --ext .jsx",
+    "serve": "http-server build/ -p 8080"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",

@@ -2,7 +2,7 @@ import React from 'react';
 import {DragDropContext} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
-import Lanes from './lanes.jsx';
+import Lanes from './lanes';
 import LaneActions from '../actions/laneActions';
 import LaneStore from '../stores/laneStore';
 

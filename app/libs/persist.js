@@ -3,7 +3,6 @@ import makeFinalStore from 'alt-utils/lib/makeFinalStore';
 export default function(alt, storage, storeName) {
 	const finalStore = makeFinalStore(alt);
 	try {
-		console.log('here', storeName);
 		alt.bootstrap(storage.get(storeName));
 	}
 	catch(e) {
