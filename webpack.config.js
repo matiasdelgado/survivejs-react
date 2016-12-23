@@ -14,7 +14,7 @@ const PATHS = {
 	app: path.join(__dirname, 'app'),
 	build: path.join(__dirname, 'build'),
 	style: glob.sync('./app/**/*.css'),
-	test: path.join(__dirname, 'tests')
+	test: glob.sync('./app/**/*.spec.js')
 }
 
 process.env.BABEL_ENV = TARGET;
@@ -32,8 +32,7 @@ const common = {
 	},
 	module: {
 		preLoaders: [
-			{ test: /\.css$/, loaders: ['postcss'], include: PATHS.app },
-			{ test: /\.jsx?$/, loaders: ['eslint'], include: PATHS.app }
+			{ test: /\.css$/, loaders: ['postcss'], include: PATHS.app }
 		],
 		loaders: [
 			{ test: /\.jsx?$/, loaders: ['babel?cacheDirectory'], include: PATHS.app }
@@ -72,6 +71,9 @@ if (TARGET === 'start' || !TARGET) {
 			port: process.env.PORT
 		},
 		module: {
+            preLoaders: [
+                { test: /\.jsx?$/, loaders: ['eslint'], include: PATHS.app }
+            ],
 			loaders: [
 				{ test: /\.css$/, loaders: ['style', 'css'], include: PATHS.app }
 			]
@@ -98,6 +100,9 @@ if (TARGET === 'build' || TARGET === 'stats') {
             chunkFilename: '[chunkhash].js'
         },
 		module: {
+            preLoaders: [
+                { test: /\.jsx?$/, loaders: ['eslint'], include: PATHS.app }
+            ],
 			loaders: [
 				{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css'), include: PATHS.app }
             ]
@@ -132,7 +137,7 @@ if (TARGET === 'test' || TARGET === 'tdd') {
 				{ test: /\.jsx?$/, loaders: ['isparta-instrumenter'], include: PATHS.app }
 			],
 			loaders: [
-				{ test: /\.jsx?$/, loaders: ['babel?cacheDirectory'], include: PATHS.test }
+				{ test: /\.jsx?$/, loaders: ['babel?cacheDirectory'], include: __dirname, exclude: path.join(__dirname, 'node_modules') }
 			]
 		}
 	});

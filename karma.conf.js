@@ -1,13 +1,13 @@
-module.exports = function karmaConfig(config) {
+module.exports = function (config) {
 	config.set({
 		frameworks: ['mocha'],
 		reporters: ['spec', 'coverage'],
 		files: [
 			'node_modules/phantomjs-polyfill/bind-polyfill.js',
-			'app/components/editable/editable.spec.js'
+			'tests/**/*_test.jsx'
 		],
 		preprocessors: {
-			'app/**/*.spec.js': ['webpack', 'sourcemap']
+			'./tests/**/*_test.jsx': ['webpack']
 		},
 		browsers: ['PhantomJS'],
 		singleRun: true,
@@ -16,8 +16,8 @@ module.exports = function karmaConfig(config) {
 			type: 'html'
 		},
 		webpack: require('./webpack.config'),
-		webpackMiddleware: {
-			noInfo: true
-		}
-	})
+		// webpackMiddleware: {
+		// 	noInfo: true
+		// }
+	});
 }
