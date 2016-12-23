@@ -126,6 +126,7 @@ if (TARGET === 'build' || TARGET === 'stats') {
 }
 if (TARGET === 'test' || TARGET === 'tdd') {
 	module.exports = merge(common, {
+        entry: null,
 		devtool: 'inline-source-map',
 		resolve: {
 			alias: {
@@ -137,7 +138,7 @@ if (TARGET === 'test' || TARGET === 'tdd') {
 				{ test: /\.jsx?$/, loaders: ['isparta-instrumenter'], include: PATHS.app }
 			],
 			loaders: [
-				{ test: /\.jsx?$/, loaders: ['babel?cacheDirectory'], include: __dirname, exclude: path.join(__dirname, 'node_modules') }
+				{ test: /\.jsx?$/, loaders: ['babel?cacheDirectory'], include: PATHS.app }
 			]
 		}
 	});

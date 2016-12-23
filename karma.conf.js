@@ -4,10 +4,10 @@ module.exports = function (config) {
 		reporters: ['spec', 'coverage'],
 		files: [
 			'node_modules/phantomjs-polyfill/bind-polyfill.js',
-			'tests/**/*_test.jsx'
+			'app/**/*.spec.jsx'
 		],
 		preprocessors: {
-			'./tests/**/*_test.jsx': ['webpack']
+			'app/**/*.jsx': ['webpack']
 		},
 		browsers: ['PhantomJS'],
 		singleRun: true,
@@ -15,9 +15,6 @@ module.exports = function (config) {
 			dir: 'build/coverage',
 			type: 'html'
 		},
-		webpack: require('./webpack.config'),
-		// webpackMiddleware: {
-		// 	noInfo: true
-		// }
+		webpack: require('./webpack.config')
 	});
 }
