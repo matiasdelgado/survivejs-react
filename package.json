@@ -46,7 +46,6 @@
         "react-dnd-test-backend": "^2.2.4",
         "style-loader": "^0.13.2",
         "stylelint-config-standard": "^16.0.0",
-        "stylelint-webpack-plugin": "^0.7.0",
         "webpack": "^2.2.1",
         "webpack-dev-server": "^2.4.1",
         "webpack-merge": "^4.0.0"
@@ -60,6 +59,7 @@
         "react-dnd": "^2.2.4",
         "react-dnd-html5-backend": "^2.2.4",
         "react-dom": "^15.4.2",
+        "stylelint": "^7.9.0",
         "uuid": "^3.0.1"
     }
 }
